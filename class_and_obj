@@ -1,0 +1,39 @@
+class Std{
+    String name;
+    int reg;
+
+    void setName(String x){
+        name=x;
+    }
+    void regNo(int r){
+        reg=r;
+    }
+    void getName(){
+        System.out.println(name);
+    }
+    void getReg(){
+        System.out.println(reg);
+    }
+}
+public class Student {
+    public static void main(String[] args) {
+        Std ob1= new Std();
+        Std ob2= new Std();
+        Std ob3= new Std();
+
+        ob1.setName("Mike");
+        ob1.regNo(100);
+        ob1.getName();
+        ob1.getReg();
+
+        ob2.setName("Harvey");
+        ob2.regNo(109);
+        ob2.getName();
+        ob2.getReg();
+
+        ob3.setName("Amy");
+        ob3.regNo(74);
+        ob3.getName();
+        ob3.getReg();
+    }
+}
