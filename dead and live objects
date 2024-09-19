@@ -1,0 +1,62 @@
+import java.util.Scanner;
+
+class Student2 {
+    int marks;
+    int regno;
+    String name;
+    Scanner scan;
+
+    Student2 () {
+        scan = new Scanner(System.in);
+    }
+
+    void SetValue() {
+        System.out.println("Enter name:");
+        name = scan.nextLine();
+        System.out.println("Enter registration number:");
+        regno = scan.nextInt();
+        System.out.println("Enter marks:");
+        marks = scan.nextInt();
+        scan.nextLine();
+    }
+
+    void getValue() {
+        System.out.println("Name: " + name + ", RegNo: " + regno + ", Marks: " + marks);
+    }
+
+  
+    void closeScanner() {
+        scan.close();
+    }
+}
+
+public class Construct {
+    public static void main(String[] args) {
+        Student2  ob1 = new Student2 ();
+        Student2  ob2 = new Student2 ();
+        Student2  ob3 = new Student2 (); 
+
+        ob1.SetValue();
+        ob2.SetValue();
+        ob3.SetValue();
+
+        ob1.getValue();
+        ob2.getValue();
+        ob3.getValue();
+
+        ob1 = null; 
+        ob2 = null; 
+        
+
+        ob3.getValue(); 
+
+   
+        Student2  ob4 = new Student2 ();
+        ob4.SetValue();
+        ob4.getValue();
+
+        
+        ob3.closeScanner();
+        ob4.closeScanner();
+    }
+}
