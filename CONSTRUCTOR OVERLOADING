@@ -1,0 +1,27 @@
+class Laptop {
+    String brand;
+    int ram;
+    double price;
+
+
+    Laptop(String b, int r) {
+        brand = b;
+        ram = r;
+        price = 0; // Default price
+    }
+
+ 
+    Laptop(String b, int r, double p) {
+        brand = b;
+        ram = r;
+        price = p;
+    }
+
+    public static void main(String[] args) {
+        Laptop laptop1 = new Laptop("HP", 8); // Calls constructor with two parameters
+        Laptop laptop2 = new Laptop("Dell", 16, 1200); // Calls constructor with three parameters
+
+        System.out.println("Laptop1: " + laptop1.brand + ", RAM: " + laptop1.ram + "GB, Price: $" + laptop1.price);
+        System.out.println("Laptop2: " + laptop2.brand + ", RAM: " + laptop2.ram + "GB, Price: $" + laptop2.price);
+    }
+}
