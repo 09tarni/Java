@@ -1,0 +1,48 @@
+class CarRentalSystem {
+    private int totalCars;
+    private int bookedCars;
+    private String[] carRegistrationNumbers;
+    private String[] modelNames;
+    private int[] carStatus;
+
+    public CarRentalSystem(int totalCars, String[] carRegistrationNumbers, String[] modelNames) {
+        totalCars = totalCars;
+        bookedCars = 0;
+        carRegistrationNumbers = carRegistrationNumbers;
+        modelNames = modelNames;
+        carStatus = new int[totalCars];
+    }
+
+    public void rentCar(int carIndex) {
+        if (carIndex >= 0 && carIndex < totalCars && carStatus[carIndex] == 0) {
+            carStatus[carIndex] = 1;
+            bookedCars++;
+        }
+    }
+
+    public void returnCar(int carIndex) {
+        if (carIndex >= 0 && carIndex < totalCars && carStatus[carIndex] == 1) {
+            carStatus[carIndex] = 0;
+            bookedCars--;
+        }
+    }
+
+    public void displayCarStatus() {
+        System.out.println("Total Cars: " + totalCars);
+        System.out.println("Booked Cars: " + bookedCars);
+        System.out.println("Available Cars: " + (totalCars - bookedCars));
+    }
+
+    public static void main(String[] args) {
+        String[] regNumbers = {"MH12AB1234", "MH12CD5678", "MH12EF9012", "MH12GH3456"};
+        String[] models = {"Toyota Corolla", "Honda Civic", "Ford Focus", "BMW 3 Series"};
+
+        CarRentalSystem carRentalSystem = new CarRentalSystem(4, regNumbers, models);
+
+        carRentalSystem.rentCar(1);
+        carRentalSystem.displayCarStatus();
+        
+        carRentalSystem.returnCar(1);
+        carRentalSystem.displayCarStatus();
+    }
+}
