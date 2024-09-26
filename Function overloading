@@ -1,0 +1,30 @@
+class Purchase {
+
+    
+    public void processAmount(String creditCardNumber, double amount, String cvv) {
+        System.out.println("Processing Credit Card Transaction");
+        System.out.println("Credit Card Number: " + creditCardNumber);
+        System.out.println("Amount: " + amount);
+        System.out.println("CVV: " + cvv);
+    }
+
+    public void processAmount(String upiId, double amount) {
+        System.out.println("Processing UPI Transaction");
+        System.out.println("UPI ID: " + upiId);
+        System.out.println("Amount: " + amount);
+    }
+    public void processAmount(String accountNumber, String ifscCode, double amount) {
+        System.out.println("Processing Online Banking Transaction");
+        System.out.println("Account Number: " + accountNumber);
+        System.out.println("IFSC Code: " + ifscCode);
+        System.out.println("Amount: " + amount);
+    }
+    
+    public static void main(String[] args) {
+        Purchase purchase = new Purchase();
+        
+        purchase.processAmount("1234-5678-9876-5432", 1000.50, "123");
+        purchase.processAmount("user@upi", 500.75);
+        purchase.processAmount("9876543210", "IFSC0001", 2500.00);
+    }
+}
