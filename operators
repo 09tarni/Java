@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Relational {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Taking input for integers
+        System.out.print("Enter first number (a): ");
+        int a = sc.nextInt();
+        System.out.print("Enter second number (b): ");
+        int b = sc.nextInt();
+
+        // Taking input for booleans
+        System.out.print("Enter first boolean (true/false) for x: ");
+        boolean x = sc.nextBoolean();
+        System.out.print("Enter second boolean (true/false) for y: ");
+        boolean y = sc.nextBoolean();
+
+        // Relational operators
+        System.out.println("\nRelational Operators:");
+        System.out.println("a == b: " + (a == b));
+        System.out.println("a != b: " + (a != b));
+        System.out.println("a > b: " + (a > b));
+        System.out.println("a < b: " + (a < b));
+
+        // Logical operators
+        System.out.println("\nLogical Operators:");
+        System.out.println("x && y: " + (x && y));
+        System.out.println("x || y: " + (x || y));
+
+        sc.close();
+    }
+}
