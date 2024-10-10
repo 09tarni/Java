@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+class X {
+    int a,b,c,d,e,f;
+    X(int a, int b ,int c ,int d , int e){
+        this(a,b);
+        this.c=c*f;
+        this.d=d*f;
+        this.e=e*f;
+    }
+    void sol (){
+        int ans = a+b+c+d+e+f;
+        System.out.println("Answer : "+ ans);
+    }
+    X(int a, int b){
+        f = a*b;
+
+    }
+}
+
+class Main {
+    public static void main (String[] args) {
+        X ob=new X(1,2,3,4,5);
+        ob.sol();
+    }
+}
