@@ -1,0 +1,35 @@
+class Main {
+    public static void main(String[] args) {
+        try {
+            String[] arr = new String[2];
+            arr[3] = "Out of bounds";
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Error: Array index out of bounds");
+        }
+
+        try {
+            int[] numbers = {1, 2, 3};
+            System.out.println(numbers[5]);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Error: Index 5 is out of bounds");
+        }
+
+        try {
+            int num = Integer.parseInt("abc");
+        } catch (NumberFormatException e) {
+            System.out.println("Error: Invalid number format");
+        }
+
+        try {
+            throw new CustomException("Custom exception thrown");
+        } catch (CustomException e) {
+            System.out.println("Caught: " + e.getMessage());
+        }
+    }
+}
+
+class CustomException extends Exception {
+    CustomException(String message) {
+        super(message);
+    }
+}
